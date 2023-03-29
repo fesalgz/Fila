@@ -21,3 +21,5 @@ tail - //cauda indica quantos elementos tem na fila
 
 onde a fila é aplicada?
 Em qualquer situação onde temos que organizar o atendimento de elementos. Emails, filas de impressao, lista de compras, pagamentos, etc...
+
+https://www.cs.usfca.edu/~galles/visualization/QueueArray.html
