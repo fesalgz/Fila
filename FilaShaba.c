@@ -26,11 +26,11 @@ void enqueue() {
     /*se o num de elementos for menor que o num da fila, adiciona
     senao falamos que a fila está cheia*/
     if (tail < tamfila) {
-        printf("Informe um valor para adicionar na fila:");
+        printf("Informe um valor para adicionar na fila:\n");
         scanf("%d", &val);
         //posicao da fila [aonde vai colocar na fila, usando o tail]
         fila[tail] = val;
-        tail = tail++;
+        tail = tail + 1;
         lista_elementos();
     } else {
         printf("Mano, não cabe, fila cheia.");
@@ -39,22 +39,26 @@ void enqueue() {
 
 //chama o proximo valor da lista, e incrementa o head
 void dequeue(){
+    printf("\nNúmero removido: %d", fila[head]);
     /*temos que ver se a head for menor que tail
       pq se for igual, a fila está vazia*/
     if(head < tail){
         //pos. da fila [posicao da head] = começo da fila - sao correlacionados
         fila[head] = 0;
-        head = head++;
+        head = head + 1;
         lista_elementos();
     }
 }
 
 //limpa a fila
 void clear(){
+
     //repetição para zerar todas as posições da fila
-    for (int i=0, i < tamfila, i++) {
+
+    for (int i = 0 ; i < tamfila ; i++) {
         fila[i] = 0;
     }
+
     head = 0; //zerou head
     tail = 0; //zerou tail
 }
@@ -64,7 +68,46 @@ void clear(){
 int main (){
     setlocale(LC_ALL, "Portuguese");
 
+    int opcao = 0;
+//inicio do laço de repetição
+do {
+    printf("\nSELECIONE A OPÇÃO ABAIXO:\n\n");
+    printf("[1] - Inserir (Enqueue)\n");
+    printf("[2] - Remover (Dequeue)\n");
+    printf("[3] - Listar\n");
+    printf("[4] - Limpar a fila (Clear)\n");
+    printf("[-1] - Sair\n");
+    printf("\nDigite a opção desejada: \n");
+    scanf("%d", &opcao);
+
+    //
+    switch(opcao) {
+
+case 1:
+    enqueue();
+    break;
+
+case 2:
+    dequeue();
+    break;
+
+case 3:
     lista_elementos();
+    break;
+
+case 4:
+    clear();
+    break;
+
+
+case -1:
+    break;
+
+default:
+    printf("Mardito, digite dentro da faixa\n");
+    break;
+        }
+    } while (opcao != -1); //fazendo a verificação de da opçao diferente de -1
 
     return 0;
 }

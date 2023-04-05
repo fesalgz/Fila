@@ -10,15 +10,19 @@ A fila trabalha com um recurso chamado - FIFO - (first in first out) - o element
 
 enqueue() - ele adiciona o elemento da fila
 dequeue() - ele remove o elemento da fila
-clear() - ele limpa a fila
+clear() - ele limpa a fila (zera o head e tail)
 
 O elemento fila tem 3 estruturas principais
 
 Fila[10] - [0][1][2][3][4][5][6][7][8][9]
 
-head - //Cabeça da fila, indica quem é o primeiro elemento da fila
+head - //Cabeça da fila, indica quem é o primeiro elemento da fila (incrementa quando é chamado algum valor da fila)
 
-tail - //cauda indica quantos elementos tem na fila
+tail - //cauda indica quantos elementos tem na fila (incrementa quando adiciona valor na fila)
 
 onde a fila é aplicada?
 Em qualquer situação onde temos que organizar o atendimento de elementos. Emails, filas de impressao, lista de compras, pagamentos, etc...
+
+https://www.cs.usfca.edu/~galles/visualization/QueueArray.html
+
+quando apertar 2, a fila tem q andar, 
